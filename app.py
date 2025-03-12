@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, Response
 import sqlite3
+import csv
 
 app = Flask(__name__)
 
@@ -55,6 +56,30 @@ def admin():
         cursor.execute("SELECT * FROM responses")
         responses = cursor.fetchall()
     return render_template('admin.html', responses=responses)
+
+# Nueva función para exportar los resultados a CSV
+@app.route('/export-csv')
+def export_csv():
+    with sqlite3.connect("survey.db") as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM responses")
+        responses = cursor.fetchall()
+
+    # Crear el archivo CSV en memoria
+    output = []
+    output.append(["ID", "Satisfacción", "Sucursal", "Profesional", "Recomendación", "Comentarios"])  # Encabezados
+    for response in responses:
+        output.append(list(response))
+
+    # Convertir la lista en formato CSV
+    csv_output = "\n".join([",".join(map(str, row)) for row in output])
+
+    # Enviar el CSV como respuesta HTTP
+    return Response(
+        csv_output,
+        mimetype="text/csv",
+        headers={"Content-Disposition": "attachment;filename=survey_results.csv"}
+    )
 
 if __name__ == '__main__':
     init_db()
