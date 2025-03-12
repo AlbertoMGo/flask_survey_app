@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>Respuestas de la Encuesta</h1>
+
     <table border="1">
         <tr>
             <th>ID</th>
@@ -26,6 +27,14 @@
         </tr>
         {% endfor %}
     </table>
+
+    <br>
+
+    <!-- Botón para Exportar a CSV -->
+    <a href="/export-csv" class="export-btn">Descargar CSV</a>
+
+    <br><br>
+
     <a href="/">Volver al inicio</a>
 </body>
 </html>
