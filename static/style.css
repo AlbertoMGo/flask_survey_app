@@ -19,10 +19,22 @@ a, button {
     border-radius: 5px;
     margin-top: 10px;
     display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
 a:hover, button:hover {
     background-color: #0056b3;
+}
+
+/* Estilos del Contenedor Principal */
+.container {
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 
 /* Estilos del Formulario */
@@ -33,6 +45,7 @@ form {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    text-align: left;
 }
 
 input, select, textarea {
@@ -41,11 +54,13 @@ input, select, textarea {
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
     width: 100%;
-    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
 }
 
 /* Estilos para la Tabla del Admin */
@@ -53,11 +68,16 @@ table {
     width: 80%;
     margin: auto;
     border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
+    text-align: left;
 }
 
 th {
@@ -67,4 +87,28 @@ th {
 
 td {
     background-color: #fff;
+}
+
+/* Botón de Exportación CSV */
+.export-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.export-btn:hover {
+    background-color: #218838;
+}
+
+/* Botón de Volver */
+.back-btn {
+    background-color: #dc3545;
+}
+
+.back-btn:hover {
+    background-color: #c82333;
 }
