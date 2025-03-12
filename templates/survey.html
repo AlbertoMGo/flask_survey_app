@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encuesta de Satisfacción</title>
+</head>
+<body>
+    <h1>Encuesta de Satisfacción</h1>
+    <form method="post">
+        <label>¿Qué tan satisfecho estás con tu consulta? (1-5)</label>
+        <input type="number" name="satisfaction" min="1" max="5" required>
+        <br>
+
+        <label>¿En qué sucursal te atendieron?</label>
+        <input type="text" name="branch" required>
+        <br>
+
+        <label>¿Quién fue el profesional de la salud que te atendió?</label>
+        <input type="text" name="professional" required>
+        <br>
+
+        <label>¿Recomendarías el servicio a algún amigo o familiar?</label>
+        <select name="recommend" required>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label>¿Tienes algún comentario u observación de tu experiencia?</label>
+        <textarea name="comments"></textarea>
+        <br>
+
+        <button type="submit">Enviar Encuesta</button>
+    </form>
+</body>
+</html>

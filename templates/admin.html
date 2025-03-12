@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel de Administración</title>
+</head>
+<body>
+    <h1>Respuestas de la Encuesta</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Satisfacción</th>
+            <th>Sucursal</th>
+            <th>Profesional</th>
+            <th>Recomendación</th>
+            <th>Comentarios</th>
+        </tr>
+        {% for response in responses %}
+        <tr>
+            <td>{{ response[0] }}</td>
+            <td>{{ response[1] }}</td>
+            <td>{{ response[2] }}</td>
+            <td>{{ response[3] }}</td>
+            <td>{{ response[4] }}</td>
+            <td>{{ response[5] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Volver al inicio</a>
+</body>
+</html>
