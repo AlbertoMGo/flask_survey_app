@@ -5,36 +5,39 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Respuestas de la Encuesta</h1>
+    <div class="container">
+        <h1>Respuestas de la Encuesta</h1>
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Satisfacción</th>
-            <th>Sucursal</th>
-            <th>Profesional</th>
-            <th>Recomendación</th>
-            <th>Comentarios</th>
-        </tr>
-        {% for response in responses %}
-        <tr>
-            <td>{{ response[0] }}</td>
-            <td>{{ response[1] }}</td>
-            <td>{{ response[2] }}</td>
-            <td>{{ response[3] }}</td>
-            <td>{{ response[4] }}</td>
-            <td>{{ response[5] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Satisfacción</th>
+                <th>Sucursal</th>
+                <th>Profesional</th>
+                <th>Recomendación</th>
+                <th>Comentarios</th>
+            </tr>
+            {% for response in responses %}
+            <tr>
+                <td>{{ response[0] }}</td>
+                <td>{{ response[1] }}</td>
+                <td>{{ response[2] }}</td>
+                <td>{{ response[3] }}</td>
+                <td>{{ response[4] }}</td>
+                <td>{{ response[5] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
-    <br>
+        <br>
 
-    <!-- Botón para Exportar a CSV -->
-    <a href="/export-csv" class="export-btn">Descargar CSV</a>
+        <!-- Botón para Exportar a CSV -->
+        <a href="/export-csv" class="export-btn">📥 Descargar CSV</a>
 
-    <br><br>
+        <br><br>
 
-    <a href="/">Volver al inicio</a>
+        <!-- Botón para Volver al Inicio -->
+        <a href="/" class="back-btn">🏠 Volver al Inicio</a>
+    </div>
 </body>
 </html>

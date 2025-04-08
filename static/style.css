@@ -1,114 +1,113 @@
-/* Estilos Generales */
+/* Fuente moderna de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
-h1 {
-    color: #333;
-}
-
-a, button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-}
-
-a:hover, button:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos del Contenedor Principal */
+/* Contenedor principal centrado */
 .container {
+    background: #ffffff;
     max-width: 600px;
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    margin: 40px auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Estilos del Formulario */
+/* Títulos */
+h1 {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* Formularios */
 form {
-    background: white;
-    padding: 20px;
-    max-width: 400px;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 8px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    width: 100%;
     padding: 10px;
-    font-size: 16px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
 }
 
-/* Estilos para la Tabla del Admin */
+textarea {
+    resize: vertical;
+}
+
+button, .export-btn, .back-btn, a.button-link {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .export-btn:hover, .back-btn:hover, a.button-link:hover {
+    background-color: #0056b3;
+}
+
+/* Tabla de administración */
 table {
-    width: 80%;
-    margin: auto;
+    width: 100%;
     border-collapse: collapse;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
 th, td {
-    padding: 12px;
     border: 1px solid #ddd;
-    text-align: left;
+    padding: 12px;
 }
 
 th {
     background-color: #007bff;
     color: white;
+    font-weight: 600;
 }
 
-td {
-    background-color: #fff;
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-/* Botón de Exportación CSV */
-.export-btn {
-    display: inline-block;
-    background-color: #28a745;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+/* Estrellas */
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
 }
 
-.export-btn:hover {
-    background-color: #218838;
+.star {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
 }
 
-/* Botón de Volver */
-.back-btn {
-    background-color: #dc3545;
-}
-
-.back-btn:hover {
-    background-color: #c82333;
+.star:hover,
+.star.selected {
+    color: gold;
 }
