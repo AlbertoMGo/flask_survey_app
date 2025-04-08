@@ -111,3 +111,24 @@ tr:nth-child(even) {
 .star.selected {
     color: gold;
 }
+.emoji-rating {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.emoji {
+    font-size: 32px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+}
+
+.emoji.selected {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 5px #007bff);
+}

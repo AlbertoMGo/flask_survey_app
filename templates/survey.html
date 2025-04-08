@@ -3,13 +3,30 @@
 <head>
     <title>Encuesta de Satisfacción</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<script>
+    function setEmojiRating(value) {
+        document.getElementById('satisfaction').value = value;
+        const emojis = document.getElementsByClassName('emoji');
+        for (let i = 0; i < emojis.length; i++) {
+            emojis[i].classList.remove('selected');
+        }
+        emojis[5 - value].classList.add('selected');
+    }
+</script>
 </head>
 <body>
     <div class="container">
     <h1>Encuesta de Satisfacción</h1>
     <form method="post">
-        <label>¿Qué tan satisfecho estás con tu consulta? (1-5)</label>
-        <input type="number" name="satisfaction" min="1" max="5" required>
+        <label>¿Cómo te sentiste con tu consulta?</label>
+<div class="emoji-rating">
+    <span class="emoji" onclick="setEmojiRating(5)">😄</span>
+    <span class="emoji" onclick="setEmojiRating(4)">🙂</span>
+    <span class="emoji" onclick="setEmojiRating(3)">😐</span>
+    <span class="emoji" onclick="setEmojiRating(2)">🙁</span>
+    <span class="emoji" onclick="setEmojiRating(1)">😢</span>
+</div>
+<input type="hidden" name="satisfaction" id="satisfaction" value="0">
         <br>
 
         <label>¿En qué sucursal te atendieron?</label>
