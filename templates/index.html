@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Encuesta de Satisfacción</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>Bienvenido a la Encuesta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='img/clinica-bg.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+
+        .hero {
+            background-color: rgba(0,0,0,0.6);
+            padding: 60px 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 100px auto;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero a.button-link {
+            background-color: #28a745;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .hero a.button-link:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenido a la Encuesta de Satisfacción</h1>
-    <p>Queremos conocer tu opinión sobre nuestros servicios.</p>
-    <a href="/survey">Realizar Encuesta</a>
+    <div class="hero">
+        <h1>Bienvenido a la Encuesta de Satisfacción</h1>
+        <p>Tu opinión nos ayuda a mejorar nuestros servicios de psicología, odontología y atención médica.</p>
+        <a href="/survey" class="button-link">📝 Realizar Encuesta</a>
+    </div>
 </body>
 </html>
