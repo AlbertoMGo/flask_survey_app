@@ -13,6 +13,16 @@
         emojis[5 - value].classList.add('selected');
     }
 </script>
+<script>
+    function selectBranch(name) {
+        document.getElementById('branch').value = name;
+        const buttons = document.getElementsByClassName('branch-btn');
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('selected');
+        }
+        event.target.classList.add('selected');
+    }
+</script>
 </head>
 <body>
     <div class="container">
@@ -30,7 +40,13 @@
         <br>
 
         <label>¿En qué sucursal te atendieron?</label>
-        <input type="text" name="branch" required>
+<div class="branch-buttons">
+    <button type="button" class="branch-btn" onclick="selectBranch('Sucursal 1')">Sucursal 1</button>
+    <button type="button" class="branch-btn" onclick="selectBranch('Sucursal 2')">Sucursal 2</button>
+    <button type="button" class="branch-btn" onclick="selectBranch('Sucursal 3')">Sucursal 3</button>
+</div>
+<input type="hidden" name="branch" id="branch" required>
+
         <br>
 
         <label>¿Quién fue el profesional de la salud que te atendió?</label>
